@@ -85,7 +85,13 @@ async function processarStatus() {
           const statusTexto =
             statusDescricao[statusHoje.status] ||
             `Código desconhecido: ${statusHoje.status}`;
-          console.log(` - ${nome}: ${statusTexto}`);
+
+            if(statusDescricao == 1){
+                console.log(` - ${nome}: ${statusTexto}`);
+            }else{
+                console.warn(` - ${nome}: ${statusTexto}`);
+            }
+          
         } else {
           console.log(` - ${nome}: ⚪ Sem dados para hoje (${hoje})`);
         }
